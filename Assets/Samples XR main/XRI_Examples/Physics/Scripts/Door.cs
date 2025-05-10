@@ -74,7 +74,13 @@ namespace UnityEngine.XR.Content.Interaction
             m_ClosedDoorLimits.max = 0.0f;
             m_DoorJoint.limits = m_ClosedDoorLimits;
             m_KeyKnob.SetActive(false);
-            m_Closed = true;
+            m_Closed = false;
+
+
+            m_Locked = false;
+                m_OnUnlock.Invoke();
+                
+                KeyUpdate(0.1f);
         }
 
         void Update()
@@ -159,13 +165,15 @@ namespace UnityEngine.XR.Content.Interaction
         }
 
         public void KeyLockSelect(SelectEnterEventArgs args)
-        {
+        {m_Locked = true;
+                m_OnLock.Invoke();
             m_KnobInteractor = args.interactorObject as XRBaseInteractor;
             m_KnobInteractorAttachTransform = args.interactorObject.GetAttachTransform(args.interactableObject);
         }
 
         public void KeyLockDeselect(SelectExitEventArgs args)
-        {
+        {   m_Locked = false;
+                m_OnUnlock.Invoke();
             m_KnobInteractor = null;
             m_KnobInteractorAttachTransform = null;
         }
