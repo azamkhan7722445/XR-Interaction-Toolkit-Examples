@@ -7,16 +7,29 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Assets/XRI_Examples/SocketInteractors/Materials/Peg_Yellow.mat
   m_Name: Peg_Yellow
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
+=======
+  m_Name: Green
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _EMISSION
+>>>>>>> Stashed changes:Assets/Samples/XR Hands/1.4.3/HandVisualizer/Materials/Green.mat
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
+<<<<<<< Updated upstream:Assets/XRI_Examples/SocketInteractors/Materials/Peg_Yellow.mat
   m_CustomRenderQueue: 2000
+=======
+  m_CustomRenderQueue: -1
+>>>>>>> Stashed changes:Assets/Samples/XR Hands/1.4.3/HandVisualizer/Materials/Green.mat
   stringTagMap:
     RenderType: Opaque
   disabledShaderPasses: []
@@ -104,6 +117,11 @@ Material:
     - _DistortionStrengthScaled: 0.1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
+<<<<<<< Updated upstream:Assets/XRI_Examples/SocketInteractors/Materials/Peg_Yellow.mat
+=======
+    - _EmissionEnabled: 0
+    - _EnableExternalAlpha: 0
+>>>>>>> Stashed changes:Assets/Samples/XR Hands/1.4.3/HandVisualizer/Materials/Green.mat
     - _EnvironmentReflections: 1
     - _FlipbookBlending: 0
     - _FlipbookMode: 0
@@ -116,7 +134,7 @@ Material:
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SoftParticlesEnabled: 0
     - _SoftParticlesFarFadeDistance: 1
@@ -124,6 +142,14 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
+<<<<<<< Updated upstream:Assets/XRI_Examples/SocketInteractors/Materials/Peg_Yellow.mat
+=======
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+>>>>>>> Stashed changes:Assets/Samples/XR Hands/1.4.3/HandVisualizer/Materials/Green.mat
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
