@@ -231,6 +231,18 @@ namespace UnityEngine.XR.Content.Interaction
             m_Interactor = null;
         }
 
+        //protected override void OnHoverEntered(HoverEnterEventArgs args)
+        //{
+        //    base.OnHoverEntered(args);
+        //    HoverEnterAction?.Invoke();
+        //    print("Hover Enter");
+        //}
+
+        //protected override void OnFocusExited(FocusExitEventArgs args)
+        //{
+        //    base.OnFocusExited(args);
+        //    HoverExitAction?.Invoke();
+        //}
         public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
         {
             base.ProcessInteractable(updatePhase);

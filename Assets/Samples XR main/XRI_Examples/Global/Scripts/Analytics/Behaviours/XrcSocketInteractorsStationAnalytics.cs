@@ -27,33 +27,42 @@ namespace UnityEngine.XR.Content.Interaction.Analytics
         void Start()
         {
             // Register analytics events for the simple socket (connect/disconnect)
-            XrcAnalyticsUtils.Register(m_SimpleSocket, new ConnectSocketSimpleObject(), new DisconnectSocketSimpleObject());
+            if (m_SimpleSocket != null)
+                XrcAnalyticsUtils.Register(m_SimpleSocket, new ConnectSocketSimpleObject(), new DisconnectSocketSimpleObject());
 
             // Register analytics event for connecting the battery slot socket
-            XrcAnalyticsUtils.Register(m_BatterySlotSocket, new ConnectPerlerMachineBattery());
+            if (m_BatterySlotSocket != null)
+                XrcAnalyticsUtils.Register(m_BatterySlotSocket, new ConnectPerlerMachineBattery());
 
             // Create analytics parameter for grabbing a perler bead
             var grabPerlerBeadParameter = new GrabPerlerBead();
 
             // Register analytics for each infinity peg socket and its currently selected interactables
-            foreach (var socket in m_InfinityPegSockets)
+            if (m_InfinityPegSockets != null)
             {
-                // Register analytics for interactables already selected in the socket
-                foreach (var interactable in socket.interactablesSelected)
+                foreach (var socket in m_InfinityPegSockets)
                 {
-                    XrcAnalyticsUtils.Register(interactable as XRBaseInteractable, grabPerlerBeadParameter);
-                }
+                    if (socket == null) continue;
+                    // Register analytics for interactables already selected in the socket
+                    foreach (var interactable in socket.interactablesSelected)
+                    {
+                        XrcAnalyticsUtils.Register(interactable as XRBaseInteractable, grabPerlerBeadParameter);
+                    }
 
-                // Register analytics when a new interactable is selected in the socket
-                socket.selectEntered.AddListener(args => XrcAnalyticsUtils.Register(args.interactableObject as XRBaseInteractable, grabPerlerBeadParameter));
+                    // Register analytics when a new interactable is selected in the socket
+                    socket.selectEntered.AddListener(args => XrcAnalyticsUtils.Register(args.interactableObject as XRBaseInteractable, grabPerlerBeadParameter));
+                }
             }
 
             // Create analytics parameter for connecting a perler bead
             var connectPerlerBeadParameter = new ConnectPerlerBead();
 
             // Register analytics for all socket interactors that are children of the grid center
-            foreach (var gridSocket in m_GridCenter.GetComponentsInChildren<XRSocketInteractor>())
-                XrcAnalyticsUtils.Register(gridSocket, connectPerlerBeadParameter);
+            if (m_GridCenter != null)
+            {
+                foreach (var gridSocket in m_GridCenter.GetComponentsInChildren<XRSocketInteractor>())
+                    XrcAnalyticsUtils.Register(gridSocket, connectPerlerBeadParameter);
+            }
         }
     }
 }

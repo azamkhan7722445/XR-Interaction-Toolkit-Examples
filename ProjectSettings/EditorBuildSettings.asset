@@ -5,9 +5,21 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Samples XR main/XRI_Examples/Scenes/XRI_Examples_Main.unity
     guid: ba755f5a181505a4799b21685d4c7576
+  - enabled: 1
+    path: Assets/Azam_Data/Scene/Bedroom_Main.unity
+    guid: 243c51f982cf6eb4caaed6dab8282ae0
+  - enabled: 1
+    path: Assets/Azam_Data/Scene/Kitchen_Main.unity
+    guid: 4166c50ff6ebeec49838275bccf5233b
+  - enabled: 1
+    path: Assets/Azam_Data/Scene/Living Room_Main.unity
+    guid: 7b35cf726786add4b93d031a165833ee
+  - enabled: 1
+    path: Assets/Azam_Data/Scene/Toilet_Main.unity
+    guid: ddb52519ed2221740a68e72171799ddd
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: efb7b87eb8ecd9d46b3a0351222f323f, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: fba6072275013e6448e381f83d131b7f, type: 2}
