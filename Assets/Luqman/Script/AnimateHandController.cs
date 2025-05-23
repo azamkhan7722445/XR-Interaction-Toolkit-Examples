@@ -16,6 +16,8 @@ public class AnimateHandcontroller : MonoBehaviour
     private void Start()
     {
         _handAnimator = GetComponent<Animator>();
+        gripInputActionReference.action.Enable();
+        triggerInputActionReference.action.Enable();
     }
 
     
@@ -29,13 +31,15 @@ public class AnimateHandcontroller : MonoBehaviour
     private void AnimateGrip()
     {
         _gripValue = gripInputActionReference.action.ReadValue<float>();
-        _handAnimator.SetFloat("Grip" , _gripValue);
+        print(_gripValue + " _gripValue");
+        _handAnimator.SetFloat("Flex", _gripValue);
     }
 
     private void AnimateTrigger()
     {
         _triggerValue = triggerInputActionReference.action.ReadValue<float>();
-        _handAnimator.SetFloat("Trigger", _triggerValue);
+        print(_gripValue + " _triggerValue");
+        _handAnimator.SetFloat("Pinch", _triggerValue);
     }
 
 
